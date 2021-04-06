@@ -4,6 +4,11 @@
 ChEMBL is a manually curated database of bioactive molecules with drug like properties.
 A graphical web interface to ChEMBL is available at the [ChEMBL home page](https://www.ebi.ac.uk/chembl/).
 
+## License
+
+The EMBL-EBI services are free to use, but remember to cite them in publications.
+More details in [terms of use](https://www.ebi.ac.uk/about/terms-of-use/)
+
 ## Version
 
 *   ChEMBL 26
