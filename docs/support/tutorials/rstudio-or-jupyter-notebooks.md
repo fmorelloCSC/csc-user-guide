@@ -107,3 +107,17 @@ Both RStudio and Jupyter Notebooks print out also PuTTy instructions that have t
 2. Set up SSH tunneling from login node to compute node in **Putty -> Connection -> SSH**: 
     - Remote command: `ssh -N -L 8889:localhost:8889 john@r07c49.bullx`
 3: `Open` to start connection.
+
+## Common problems
+
+1. Creating SSH tunnel gives error
+```
+bind: Address already in use
+channel_setup_fwd_listener_tcpip: cannot listen to port: 8888
+Could not request local forwarding.
+```
+This can happen if there is Jupyter server running on a local PC, or there is an existing tunnel to other compute node. The source port (the first number in `ssh` command before localhost and the one in URL after localhost) is in principle arbitrary, and can be changed freely. That is, one can give an SSH command:
+```
+ssh -N -L 8889:localhost:8888 ...
+```
+(note that the destination port, 8888 above, needs to be same as printed out by the `start-...` command) and paste an URL `http://localhost:8889/` to a browser.
